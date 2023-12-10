@@ -14,7 +14,6 @@ public class explosionControler : MonoBehaviour
         _compAnimator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentTime = currentTime + Time.deltaTime;
