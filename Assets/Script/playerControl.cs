@@ -14,20 +14,24 @@ public class playerControl : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("matenme");
         _compRBD= GetComponent<Rigidbody2D>();
     }
     public void OnMovement(InputAction.CallbackContext move)
     {
+        Debug.Log("xd");
         _horizontal = move.ReadValue<float>();
-
+        
     }
     public void OnShoot (InputAction.CallbackContext shoot)
     {
+        Debug.Log("aa");
         if (shoot.performed)
         {
             _compAudioSourse.Play();
             Instantiate(laserPreFab, transform.position, transform.rotation);
         }
+        
     }
 
     void Update()
