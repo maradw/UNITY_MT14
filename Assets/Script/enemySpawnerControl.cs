@@ -8,7 +8,7 @@ public class enemySpawnerControl : MonoBehaviour
     float time;
     void Start()
     {
-        time = Random.Range(0.5f, 2f);
+        time = Random.Range(0.3f, 1.7f);
         Invoke("CreateEnemy", time);
     }
     void CreateEnemy()

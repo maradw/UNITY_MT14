@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyControler : MonoBehaviour
 {
-    public float speed;
+    private float speed = 8;
     private Rigidbody2D _compRigidbody;
     public GameObject explosionPrefab;
     void Awake()
