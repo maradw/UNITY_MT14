@@ -8,13 +8,13 @@ public class enemySpawnerControl : MonoBehaviour
     float time;
     void Start()
     {
-        time = Random.Range(0.3f, 1.7f);
+        time = Random.Range(0.1f, 1.2f);
         Invoke("CreateEnemy", time);
     }
     void CreateEnemy()
     {
-        float x = Random.Range(-8f, 8f);
-        Vector2 position = new Vector2(x, 4.7f);
+        float x = Random.Range(-7f, 7f);
+        Vector2 position = new Vector2(x, 5.7f);
         Instantiate(enemyPrefab, position, transform.rotation);
         Invoke("CreateEnemy", time);
 

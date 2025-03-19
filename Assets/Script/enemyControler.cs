@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class enemyControler : MonoBehaviour
 {
-    private float speed = 8;
+    private float speed = 6;
     private Rigidbody2D _compRigidbody;
     public GameObject explosionPrefab;
+
+    public static event Action<int> OnEliminated;
     void Awake()
     {
         _compRigidbody = GetComponent<Rigidbody2D>();
@@ -22,13 +25,16 @@ public class enemyControler : MonoBehaviour
         {
             Destroy(this.gameObject);
             Instantiate(explosionPrefab, transform.position, transform.rotation);
+            OnEliminated?.Invoke(10);
         }
+      
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "base" || collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
+            OnEliminated?.Invoke(-5);
         }
 
     }
